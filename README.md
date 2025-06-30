@@ -132,7 +132,7 @@ DesenvolvaSeuSite/
 
 ### Matheus Alende
 - **GitHub**: [@Mathyess](https://github.com/Mathyess)
-- **Especialização**: HTML, CSS, JavaScript, C
+- **Especialização**: HTML, CSS, JavaScript
 - **Foco**: Front-end e design responsivo
 - **Repositórios**: 11 | **Seguidores**: 13
 
