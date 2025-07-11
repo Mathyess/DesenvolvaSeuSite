@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observa elementos para animação
-    const animatedElements = document.querySelectorAll('.benefit-card, .portfolio-item, .plan-card, .stat-item');
+    const animatedElements = document.querySelectorAll('.benefit-card, .portfolio-item, .timeline-item, .option-card, .trust-item');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -279,48 +279,7 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// Adiciona estilos CSS para o menu mobile
-const mobileMenuStyles = `
-    @media (max-width: 768px) {
-        .nav-menu {
-            position: fixed;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: var(--bg-darker);
-            flex-direction: column;
-            padding: 2rem;
-            transform: translateY(-100%);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            border-top: 1px solid var(--border-color);
-        }
-        
-        .nav-menu.active {
-            transform: translateY(0);
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-    }
-`;
-
-// Adiciona os estilos ao head
-const styleSheet = document.createElement('style');
-styleSheet.textContent = mobileMenuStyles;
-document.head.appendChild(styleSheet);
+// Estilos do menu mobile agora estão no CSS principal
 
 // Preloader (opcional)
 window.addEventListener('load', function() {
