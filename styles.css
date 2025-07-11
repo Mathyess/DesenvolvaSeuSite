@@ -94,18 +94,6 @@ body {
     transition: 0.3s;
 }
 
-.nav-toggle.active span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.nav-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.nav-toggle.active span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -622,232 +610,100 @@ body {
     }
 }
 
-/* Diferenciais Section */
-.diferenciais {
+/* Plans Section */
+.plans {
     padding: 5rem 0;
-    background: var(--bg-dark, #101820);
+    background: var(--bg-darker);
 }
 
-.section-title {
-    text-align: center;
-    color: #00ffcc;
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 1.2rem;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: #e0e0e0;
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.diferenciais-grid {
+.plans-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-bottom: 4rem;
 }
 
-.diferencial-card {
-    background: #181818;
-    padding: 2.5rem 2rem;
+.plan-card {
+    background: var(--card-bg);
     border-radius: 20px;
-    border: 1px solid #222;
-    text-align: center;
-    transition: all 0.3s ease;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
     position: relative;
-    overflow: hidden;
-    box-shadow: 0 2px 24px #00ff8855;
+    transition: all 0.3s ease;
 }
 
-.diferencial-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #00ffcc 0%, #7f5af0 100%);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-neon);
+    border-color: var(--primary-color);
 }
 
-.diferencial-card:hover::before {
-    transform: scaleX(1);
+.plan-card.featured {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-neon);
 }
 
-.diferencial-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px #00ffcc99;
-    border-color: #00ffcc;
-}
-
-.diferencial-card.featured {
-    border: 2px solid #00ffcc;
-    transform: scale(1.02);
-    background: linear-gradient(135deg, #181818 0%, rgba(0, 255, 136, 0.05) 100%);
-}
-
-.diferencial-card.featured:hover {
-    transform: scale(1.04) translateY(-8px);
-}
-
-.diferencial-badge {
+.plan-badge {
     position: absolute;
     top: -10px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(90deg, #00ffcc 0%, #7f5af0 100%);
-    color: #101820;
-    padding: 0.5rem 1.5rem;
+    background: var(--gradient-primary);
+    color: var(--bg-dark);
+    padding: 0.5rem 1rem;
     border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    box-shadow: 0 4px 15px #00ffcc33;
-}
-
-.diferencial-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(90deg, #00ffcc 0%, #7f5af0 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 16px #00ffcc33;
-}
-
-.diferencial-card:hover .diferencial-icon {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 10px 30px #00ffcc55;
-}
-
-.diferencial-icon i {
-    font-size: 2rem;
-    color: #101820;
-}
-
-.diferencial-card h3 {
-    color: #fff;
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-.diferencial-card p {
-    color: #e0e0e0;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-}
-
-.diferencial-highlight {
-    background: #101820;
-    padding: 1rem;
-    border-radius: 15px;
-    border: 1px solid #222;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-}
-
-.diferencial-card:hover .diferencial-highlight {
-    border-color: #00ffcc;
-    background: rgba(0, 255, 136, 0.05);
-}
-
-.diferencial-highlight span {
-    display: block;
-    color: #00ffcc;
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-}
-
-.diferencial-highlight small {
-    color: #e0e0e0;
     font-size: 0.9rem;
+    font-weight: 600;
 }
 
-.cta-section {
+.plan-header {
     text-align: center;
-    background: #181818;
-    padding: 3rem;
-    border-radius: 20px;
-    border: 1px solid #222;
-    margin-top: 2rem;
-    box-shadow: 0 2px 24px #00ff8855;
-}
-
-.cta-section h3 {
-    color: #fff;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(90deg, #00ffcc 0%, #7f5af0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.cta-section p {
-    color: #e0e0e0;
-    font-size: 1.1rem;
     margin-bottom: 2rem;
 }
 
-.cta-buttons {
+.plan-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-white);
+}
+
+.plan-price {
     display: flex;
-    gap: 1rem;
+    align-items: baseline;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
-.cta-buttons .btn {
-    min-width: 200px;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    border-radius: 40px;
+.currency {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+}
+
+.amount {
+    font-size: 3rem;
     font-weight: 700;
-    box-shadow: 0 2px 24px #00ff8855;
-    transition: transform 0.2s, box-shadow 0.2s;
+    color: var(--primary-color);
 }
 
-.cta-buttons .btn-primary {
-    background: linear-gradient(90deg, #00ffcc 0%, #7f5af0 100%);
-    color: #101820;
+.period {
+    font-size: 1rem;
+    color: var(--text-gray);
 }
 
-.cta-buttons .btn-primary:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 32px #00ffcc99;
+.plan-features {
+    list-style: none;
+    margin-bottom: 2rem;
 }
 
-.cta-buttons .btn-secondary {
-    background: transparent;
-    color: #00ffcc;
-    border: 2px solid #00ffcc;
+.plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-gray);
 }
 
-.cta-buttons .btn-secondary:hover {
-    background: #00ffcc;
-    color: #101820;
-    transform: scale(1.05);
-    box-shadow: 0 8px 32px #00ffcc99;
-}
-
-@media (max-width: 900px) {
-    .diferenciais-grid {
-        grid-template-columns: 1fr;
-    }
-    .cta-section {
-        padding: 2rem 1.5rem;
-    }
+.plan-features i {
+    color: var(--primary-color);
 }
 
 /* Stats Section */
@@ -1111,29 +967,6 @@ body {
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--bg-dark);
-        flex-direction: column;
-        padding: 1rem;
-        border-top: 1px solid var(--border-color);
-        z-index: 1000;
-    }
-    
-    .nav-menu.active {
-        display: flex;
-    }
-    
-    .nav-menu a {
-        padding: 1rem;
-        border-bottom: 1px solid var(--border-color);
-        text-align: center;
-    }
-    
-    .nav-menu a:last-child {
-        border-bottom: none;
     }
     
     .nav-toggle {
@@ -1166,7 +999,7 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .diferenciais-grid {
+    .plans-grid {
         grid-template-columns: 1fr;
     }
     
